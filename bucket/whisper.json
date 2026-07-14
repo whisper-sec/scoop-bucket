@@ -6,11 +6,11 @@
   "architecture": {
     "64bit": {
       "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.130.0/whisper-windows-amd64.exe#/whisper.exe",
-      "hash": "d27d39267a8b783f2cd2c88513688f11a04245bb8bbd5bbef5796ff6bfa92038"
+      "hash": "8a376cb2abf3a4fb6fdda37ef2ecef0622a6bcbbbe3638d42f208f3c5b9a47b4"
     },
     "arm64": {
       "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.130.0/whisper-windows-arm64.exe#/whisper.exe",
-      "hash": "8cccd1deb2c9a9df29bac9fedfc297748e6275d9cb1abbe7c18e48e01b9c364b"
+      "hash": "78f797c83eaa886e20a0dac3c47cdd93b78ba69a392884aa02c800297feebaa3"
     }
   },
   "bin": "whisper.exe",
