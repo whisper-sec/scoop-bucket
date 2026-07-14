@@ -1,24 +1,28 @@
 {
-  "version": "0.129.0",
+  "version": "0.130.0",
   "description": "Give any agent a routable Whisper IPv6 identity and safe egress",
   "homepage": "https://whisper.online",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.129.0/whisper-windows-amd64.exe#/whisper.exe",
-      "hash": "487c46c98f9cb649877e2b91dea30891914c0b029866fc6ce531cd61ffa8027c"
+      "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.130.0/whisper-windows-amd64.exe#/whisper.exe",
+      "hash": "d27d39267a8b783f2cd2c88513688f11a04245bb8bbd5bbef5796ff6bfa92038"
     },
     "arm64": {
-      "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.129.0/whisper-windows-arm64.exe#/whisper.exe",
-      "hash": "66b9b04841df13a5b8e0f6da414e8f76822ca91ae1d4d10142c26c1a23d4a2c2"
+      "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.130.0/whisper-windows-arm64.exe#/whisper.exe",
+      "hash": "8cccd1deb2c9a9df29bac9fedfc297748e6275d9cb1abbe7c18e48e01b9c364b"
     }
   },
   "bin": "whisper.exe",
   "checkver": "github",
   "autoupdate": {
     "architecture": {
-      "64bit": { "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v$version/whisper-windows-amd64.exe#/whisper.exe" },
-      "arm64": { "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v$version/whisper-windows-arm64.exe#/whisper.exe" }
+      "64bit": {
+        "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v$version/whisper-windows-amd64.exe#/whisper.exe"
+      },
+      "arm64": {
+        "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v$version/whisper-windows-arm64.exe#/whisper.exe"
+      }
     }
   }
 }
