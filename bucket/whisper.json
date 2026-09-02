@@ -1,28 +1,28 @@
 {
-  "version": "0.210.1",
-  "description": "Give any agent a routable Whisper IPv6 identity and safe egress",
-  "homepage": "https://whisper.online",
-  "license": "MIT",
-  "architecture": {
-    "64bit": {
-      "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.210.1/whisper-windows-amd64.exe#/whisper.exe",
-      "hash": "0bd60b134c92a3a59ebd2c8a863fe6a15087b5c47721ad1a5342144580212d2f"
-    },
-    "arm64": {
-      "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.210.1/whisper-windows-arm64.exe#/whisper.exe",
-      "hash": "fd1ba79252ec11c2fc503b5ce38b4be41df73819751d8aea221cf9977fb1248b"
-    }
-  },
-  "bin": "whisper.exe",
-  "checkver": "github",
-  "autoupdate": {
+    "version": "0.211.0",
+    "description": "Give any agent a routable Whisper IPv6 identity and safe egress",
+    "homepage": "https://whisper.online",
+    "license": "MIT",
     "architecture": {
-      "64bit": {
-        "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v$version/whisper-windows-amd64.exe#/whisper.exe"
-      },
-      "arm64": {
-        "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v$version/whisper-windows-arm64.exe#/whisper.exe"
-      }
+        "64bit": {
+            "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.211.0/whisper-windows-amd64.exe#/whisper.exe",
+            "hash": "3fb0f99dd7b90e36fdbec121d3d3e8f5f4b4b2096d3e71df23355576c95d05cd"
+        },
+        "arm64": {
+            "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.211.0/whisper-windows-arm64.exe#/whisper.exe",
+            "hash": "88bc0be42b021d971b94c453743df73f71db622f5d06be50a8b0afd2c594394b"
+        }
+    },
+    "bin": "whisper.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v$version/whisper-windows-amd64.exe#/whisper.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v$version/whisper-windows-arm64.exe#/whisper.exe"
+            }
+        }
     }
-  }
 }
