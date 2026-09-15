@@ -1,0 +1,39 @@
+# Keep the manifest on the published release without a person in the loop.
+#
+# The bucket had no workflows at all, and its manifest carried `"checkver": "github"`.
+# That bare string is a recognised shorthand, but it means "derive the repository from
+# the HOMEPAGE", and this manifest's homepage is https://whisper.online, not a GitHub
+# repository. Scoop therefore fetched https://whisper.online/releases/latest, which is
+# a 404, and no version was ever found. The manifest looked like it tracked upstream
+# and did nothing, which is worse than declaring nothing at all.
+#
+# The manifest now names the repository the releases actually live in, and this runs
+# the official excavator against it. `autoupdate` needs no hash configuration: the
+# asset URLs are GitHub release downloads, so Scoop resolves each hash from the
+# release asset's own digest rather than downloading two binaries on every check.
+name: Excavator
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every four hours, off the top of the hour. The release cadence is higher than the
+    # channel-update cadence, and this is one of the channels that no longer needs a person.
+    - cron: '37 */4 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  excavate:
+    name: Excavate
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Excavate
+        uses: ScoopInstaller/GithubActions@5bceeda181721d9d10a18fdcc3ddca6f33467ae6 # v3.0.0
+        env:
+          # Skip manifests already on the published version, so a run that finds nothing
+          # is quiet rather than a commit that changes nothing.
+          SKIP_UPDATED: 1
