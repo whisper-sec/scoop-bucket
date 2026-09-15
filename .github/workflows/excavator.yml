@@ -15,6 +15,17 @@ name: Excavator
 
 on:
   workflow_dispatch:
+    inputs:
+      skip_updated:
+        description: >-
+          Skip manifests already on the published version. Leave it on for scheduled runs.
+          Turn it OFF to see what checkver actually resolves: with it on, a manifest that
+          is up to date is skipped in SILENCE, so a green run looks exactly the same
+          whether checkver found the right version or found nothing at all. That is the
+          state this bucket was in for months, and reading a green run is how it stayed
+          that way.
+        type: boolean
+        default: true
   schedule:
     # Every four hours, off the top of the hour. The release cadence is higher than the
     # channel-update cadence, and this is one of the channels that no longer needs a person.
@@ -34,6 +45,7 @@ jobs:
       - name: Excavate
         uses: ScoopInstaller/GithubActions@5bceeda181721d9d10a18fdcc3ddca6f33467ae6 # v3.0.0
         env:
-          # Skip manifests already on the published version, so a run that finds nothing
-          # is quiet rather than a commit that changes nothing.
-          SKIP_UPDATED: 1
+          # Skip manifests already on the published version, so a scheduled run that finds
+          # nothing is quiet rather than a commit that changes nothing. A manual run can turn
+          # it off to make checkver show its working.
+          SKIP_UPDATED: ${{ (github.event_name != 'workflow_dispatch' || inputs.skip_updated) && '1' || '' }}
