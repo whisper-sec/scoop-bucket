@@ -1,16 +1,16 @@
 {
-    "version": "0.240.0",
+    "version": "0.242.0",
     "description": "Give any agent a routable Whisper IPv6 identity and safe egress",
     "homepage": "https://whisper.online",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.240.0/whisper-windows-amd64.exe#/whisper.exe",
-            "hash": "891f7d024e55547d0ecadae0d4b3d278d18018b40015b0b87b185a92e81abe8c"
+            "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.242.0/whisper-windows-amd64.exe#/whisper.exe",
+            "hash": "44f91d6154b1fc22b1c0258c32eb6bfe45b9d777845d8a4538f1554169d15476"
         },
         "arm64": {
-            "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.240.0/whisper-windows-arm64.exe#/whisper.exe",
-            "hash": "7b64577a6678e84734b4afadcf8e12dbd2cffc9c65803f17e9b40bc22177a359"
+            "url": "https://github.com/whisper-sec/whisper-cli/releases/download/v0.242.0/whisper-windows-arm64.exe#/whisper.exe",
+            "hash": "92abeef1cffd80106da29ae1887c3e3f4628338ebb38838c169d609d0511ee91"
         }
     },
     "bin": "whisper.exe",
